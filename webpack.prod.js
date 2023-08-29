@@ -17,9 +17,6 @@ const prodWebpackConfig = {
           },
           {
             loader: "css-loader",
-            options: {
-              modules: true,
-            },
           },
           {
             loader: "postcss-loader",
