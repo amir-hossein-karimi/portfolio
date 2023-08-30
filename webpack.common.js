@@ -4,14 +4,15 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
-    home: "./src/scripts/home.js",
-    about: "./src/scripts/about.js",
+    main: "./src/scripts/global/main.js",
+    header: "./src/scripts/global/header.js",
+    home: "./src/scripts/home/index.js",
+    about: "./src/scripts/about/index.js",
   },
   output: {
     path: path.resolve(__dirname, "build"),
     clean: true,
     assetModuleFilename: (p) => {
-      console.log("output =====> ", p.filename.split("src/")[1]);
       return p.filename.split("src/")[1];
     },
   },
@@ -51,12 +52,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/templates/home.html"),
-      chunks: ["home"],
-      filename: "index.html",
+      chunks: ["main", "header", "home"],
+      filename: "home/index.html",
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/templates/about.html"),
-      chunks: ["about"],
+      chunks: ["main", "header", "about"],
       filename: "about/index.html",
     }),
     new CopyPlugin({
