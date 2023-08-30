@@ -1,5 +1,13 @@
+export const notActiveLinkClasses = [
+  "hover:text-purple-500",
+  "transition",
+  "duration-300",
+];
+
+export const activeLinkClasses = ["border-b-4", "border-purple-500"];
+
 export const headerTemplate = `
-    <nav class="bg-white shadow-lg">
+    <nav class="navbar">
         <div class="px-4">
             <div>
                 <div class="flex justify-between">
@@ -12,16 +20,16 @@ export const headerTemplate = `
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="" class="py-4 px-2 text-gray-500 border-b-4 border-purple-500 font-semibold">
+                    <a href="" class="py-4 px-2 text-gray-500  font-semibold">
                     Home
                     </a>
-                    <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-purple-500 transition duration-300">
+                    <a href="" class="py-4 px-2 text-gray-500 font-semibold">
                     Services
                     </a>
-                    <a href="/about" class="py-4 px-2 text-gray-500 font-semibold hover:text-purple-500 transition duration-300">
+                    <a href="/about" class="py-4 px-2 text-gray-500 font-semibold">
                     About
                     </a>
-                    <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-purple-500 transition duration-300">
+                    <a href="" class="py-4 px-2 text-gray-500 font-semibold">
                     Contact Us
                     </a>
                 </div>
