@@ -1,4 +1,4 @@
-import "./assets/styles/global.css";
+import "../assets/styles/global.css";
 // import style from "./assets/styles/style.scss";
 
 const btn = document.querySelector("button.menu-button");

@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: "./src/script.js",
+  entry: {
+    home: "./src/scripts/home.js",
+    about: "./src/scripts/about.js",
+  },
   output: {
     path: path.resolve(__dirname, "build"),
     clean: true,
@@ -47,7 +50,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/index.html"),
+      template: path.resolve(__dirname, "src/templates/home.html"),
+      chunks: ["home"],
+      filename: "index.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src/templates/about.html"),
+      chunks: ["about"],
+      filename: "about/index.html",
     }),
     new CopyPlugin({
       patterns: [
@@ -56,10 +66,7 @@ module.exports = {
           filter: (resourcePath) => {
             return !resourcePath.includes("styles/");
           },
-          to({ context, absoluteFilename }) {
-            console.log({ absoluteFilename, context, path: path.sep });
-            return "assets";
-          },
+          to: "assets",
         },
       ],
     }),

@@ -61,7 +61,7 @@ const devWebpackConfig = {
       },
     ],
   },
-  plugins: [new BundleAnalyzerPlugin({})],
+  // plugins: [new BundleAnalyzerPlugin({})],
   optimization: {
     splitChunks: {
       chunks: "all",
