@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
-.navbar {
-  @apply bg-white shadow-lg;
+body {
+  @apply flex flex-col h-screen;
+}
+
+main {
+  @apply flex-grow overflow-y-auto overflow-x-hidden;
 }
