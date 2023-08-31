@@ -1,0 +1,7 @@
+.navbar {
+  @apply bg-white shadow-lg;
+}
+
+.nav-link {
+  @apply py-4 px-2 text-gray-500 font-semibold;
+}
