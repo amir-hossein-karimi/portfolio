@@ -1,1 +1,3 @@
-console.log("about");
+const root = document.getElementById("root");
+
+root.innerText = "about";
