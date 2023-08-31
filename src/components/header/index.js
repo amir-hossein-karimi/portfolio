@@ -2,35 +2,49 @@ import "./header.css";
 
 import { headerTemplate } from "./template";
 import { insertElement } from "../../utils/insertElement";
+import { navLinks } from "../../constants";
 
 // ==== insert header
 const headerNode = document.createElement("header");
 headerNode.innerHTML = headerTemplate;
 insertElement(document.getElementById("root"), headerNode, "before");
 
+// ==== links
+const linksContainer = document.getElementById("linksContainer");
+navLinks.forEach((navLink) => {
+  const linkEl = `
+    <a href="${navLink.route}" class="nav-link ${
+    window.location.pathname === navLink.route ? "active" : "notActive"
+  }">
+      ${navLink.label}
+    </a>
+  `;
+
+  linksContainer.innerHTML += linkEl;
+});
+
+const mobileLinksContainer = document.getElementById("mobileLinksContainer");
+navLinks.forEach((navLink) => {
+  const linkEl = `
+    <li>
+      <a href="${navLink.route}" class="mobile-nav-link ${
+    window.location.pathname === navLink.route ? "active" : "notActive"
+  }">
+        ${navLink.label}
+      </a>
+    </li>
+  `;
+
+  mobileLinksContainer.innerHTML += linkEl;
+});
+
 // ==== mobile header menu
 const btn = document.querySelector("button.menu-button");
 const menu = document.querySelector(".mobile-menu");
 
-const menuAnchTexts = document.querySelectorAll(".mobile-menu a");
-menuAnchTexts.forEach((item) => {
-  if (!item.textContent.trim()) {
-    item.classList.add("hidden");
-  }
-});
-
 btn.addEventListener("click", () => {
-  if (menu.classList.contains("scale-y-0")) {
-    menu.classList.add("scale-y-100");
-    menu.classList.add("max-h-96");
-    menu.classList.remove("scale-y-0");
-    menu.classList.remove("max-h-0");
-  } else {
-    menu.classList.remove("scale-y-100");
-    menu.classList.add("max-h-0");
-    menu.classList.add("scale-y-0");
-    menu.classList.remove("max-h-96");
-  }
+  menu.classList.toggle("show");
+  menu.classList.toggle("hide");
 });
 
 // ===== dark mode

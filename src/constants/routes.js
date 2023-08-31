@@ -1,6 +1,6 @@
 const validRoutes = [
   { route: "home", hasHeader: true, hasFooter: true },
-  { route: "about", hasHeader: false, hasFooter: false },
+  { route: "about", hasHeader: true, hasFooter: false },
 ];
 
 module.exports = {
