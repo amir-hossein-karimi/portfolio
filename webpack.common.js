@@ -1,13 +1,23 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const { validRoutes } = require("./src/constants/routes.js");
+
+let entries = {};
+
+validRoutes.forEach(({ route }) => {
+  entries = {
+    ...entries,
+    [route]: `./src/scripts/${route}/index.js`,
+  };
+});
 
 module.exports = {
   entry: {
     main: "./src/scripts/global/main.js",
-    header: "./src/scripts/global/header.js",
-    home: "./src/scripts/home/index.js",
-    about: "./src/scripts/about/index.js",
+    header: "./src/components/header/index.js",
+    ...entries,
+    footer: "./src/components/footer/index.js",
   },
   output: {
     path: path.resolve(__dirname, "build"),
@@ -50,16 +60,19 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/templates/home.html"),
-      chunks: ["main", "header", "home"],
-      filename: "home/index.html",
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/templates/about.html"),
-      chunks: ["main", "header", "about"],
-      filename: "about/index.html",
-    }),
+    ...validRoutes.map(
+      ({ route, hasHeader = false, hasFooter = false }) =>
+        new HtmlWebpackPlugin({
+          template: path.resolve(__dirname, `src/templates/${route}.html`),
+          chunks: [
+            "main",
+            ...(hasHeader ? ["header"] : []),
+            route,
+            ...(hasFooter ? ["footer"] : []),
+          ],
+          filename: `${route}/index.html`,
+        })
+    ),
     new CopyPlugin({
       patterns: [
         {
