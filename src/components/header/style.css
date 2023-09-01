@@ -1,5 +1,5 @@
 .navbar {
-  @apply border-b-2 border-gray-700
+  @apply border-b-2 border-gray-700;
 }
 
 .nav-link {
@@ -15,15 +15,11 @@
 }
 
 .mobile-nav-link {
-  @apply block text-sm px-2 py-4 font-semibold text-gray-400;
-}
-
-.mobile-nav-link.active {
-  @apply bg-secondary-light text-white;
+  @apply block text-sm px-2 py-4 font-semibold text-gray-400 ml-2;
 }
 
 .mobile-nav-link.notActive {
-  @apply hover:text-white hover:bg-secondary-light;
+  @apply hover:text-white;
 }
 
 .mobile-menu {
@@ -44,4 +40,8 @@
 
 .links-container {
   @apply hidden sm:flex items-center space-x-1;
+}
+
+.indicator {
+  @apply absolute top-1/2 left-4 w-2 h-2 rounded-[50%] bg-secondary-light translate-y-[-50%];
 }

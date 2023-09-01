@@ -27,7 +27,14 @@ navLinks.forEach((navLink) => {
 const mobileLinksContainer = document.getElementById("mobileLinksContainer");
 navLinks.forEach((navLink) => {
   const linkEl = `
-    <li>
+    <li class="relative ${
+      window.location.pathname === navLink.route ? "pl-5" : ""
+    }">
+      ${
+        window.location.pathname === navLink.route
+          ? `<span class="indicator"></span>`
+          : ""
+      }
       <a href="${navLink.route}" class="mobile-nav-link ${
     window.location.pathname === navLink.route ? "active" : "notActive"
   }">

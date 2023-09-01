@@ -29,7 +29,7 @@ main {
 }
 
 .linear-text-container {
-  @apply relative w-[4.5rem] min-h-[1rem];
+  @apply relative w-[5rem] min-h-[1rem];
 }
 
 .linear-text {
