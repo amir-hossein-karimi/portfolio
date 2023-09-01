@@ -8,16 +8,14 @@ export const headerTemplate = `
                             <span class="font-semibold text-gray-500 text-lg">
                                 Portfolio
                             </span>
-
-                            <img src="../assets/images/JavaScript-logo.png" alt="Logo" class="h-8 w-8 ml-2">
                         </a>
                     </div>
 
-                    <div class="hidden md:flex items-center space-x-1" id='linksContainer'></div>
+                    <div class="links-container" id='linksContainer'></div>
             
                     <div class="md:hidden flex items-center">
                         <button class="outline-none menu-button">
-                        <svg class="w-6 h-6 text-gray-500" x-show="! showMenu" fill="none" stroke-linecap="round"
+                        <svg class="burger-menu-svg" x-show="! showMenu" fill="none" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2" viewBox="0 00 24 24" stroke="currentColor">
                             <path d="m4 6h16M4 12h16M4 18h16"></path>
                         </svg>
