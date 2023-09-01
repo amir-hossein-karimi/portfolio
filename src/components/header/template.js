@@ -1,14 +1,16 @@
+import { linearText } from "../linearText/template";
+
 export const headerTemplate = `
     <nav class="navbar">
         <div class="px-4">
             <div>
-                <div class="flex justify-between flex-row-reverse">
+                <div class="flex justify-between flex-row-reverse h-12">
                     <div class="flex space-x-7">
-                        <a href="#" class="flex items-center py-4 px-2">
-                            <span class="font-semibold text-gray-500 text-lg">
-                                Portfolio
-                            </span>
-                        </a>
+                        ${linearText({
+                          text: "Portfolio",
+                          textClassName: "font-semibold text-lg",
+                          containerClassName: "py-y px-2",
+                        })}
                     </div>
 
                     <div class="links-container" id='linksContainer'></div>

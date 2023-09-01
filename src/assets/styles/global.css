@@ -27,3 +27,14 @@ main {
 ::-webkit-scrollbar-thumb {
   @apply bg-slate-400 rounded-lg;
 }
+
+.linear-text-container {
+  @apply relative w-[4.5rem] min-h-[1rem];
+}
+
+.linear-text {
+  @apply absolute top-[50%] translate-y-[-50%] left-0;
+  background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}

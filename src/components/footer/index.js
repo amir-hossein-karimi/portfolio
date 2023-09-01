@@ -1,4 +1,4 @@
-import "./footer.css";
+import "./style.css";
 
 import { insertElement } from "../../utils/insertElement";
 import { footerTemplate } from "./template";

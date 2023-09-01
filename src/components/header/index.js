@@ -1,4 +1,4 @@
-import "./header.css";
+import "./style.css";
 
 import { headerTemplate } from "./template";
 import { insertElement } from "../../utils/insertElement";
