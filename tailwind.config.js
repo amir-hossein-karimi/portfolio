@@ -215,6 +215,9 @@ module.exports = {
         dark: "#B71D18",
         darker: "#7A0916",
       },
+      background: {
+        main: "#161513",
+      },
     }),
     columns: {
       auto: "auto",

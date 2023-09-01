@@ -1,25 +1,29 @@
+.navbar {
+  @apply border-b-2 border-gray-700
+}
+
 .nav-link {
-  @apply p-4 text-gray-500 font-semibold;
+  @apply p-4 text-gray-400 font-semibold;
 }
 
 .nav-link.active {
-  @apply border-b-4 border-primary-light;
+  @apply text-secondary-light;
 }
 
 .nav-link.notActive {
-  @apply hover:text-primary-light;
+  @apply hover:text-secondary-light;
 }
 
 .mobile-nav-link {
-  @apply block text-sm px-2 py-4 font-semibold;
+  @apply block text-sm px-2 py-4 font-semibold text-gray-400;
 }
 
 .mobile-nav-link.active {
-  @apply bg-primary-light text-white;
+  @apply bg-secondary-light text-white;
 }
 
 .mobile-nav-link.notActive {
-  @apply hover:text-white hover:bg-primary-light;
+  @apply hover:text-white hover:bg-secondary-light;
 }
 
 .mobile-menu {
@@ -39,5 +43,5 @@
 }
 
 .links-container {
-  @apply hidden md:flex items-center space-x-1;
+  @apply hidden sm:flex items-center space-x-1;
 }

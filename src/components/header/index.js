@@ -3,6 +3,7 @@ import "./header.css";
 import { headerTemplate } from "./template";
 import { insertElement } from "../../utils/insertElement";
 import { navLinks } from "../../constants";
+import { windowSizeTracker } from "../../utils/windowSizeTracker";
 
 // ==== insert header
 const headerNode = document.createElement("header");
@@ -41,6 +42,13 @@ navLinks.forEach((navLink) => {
 // ==== mobile header menu
 const btn = document.querySelector("button.menu-button");
 const menu = document.querySelector(".mobile-menu");
+
+windowSizeTracker(({ width }) => {
+  if (width > 640) {
+    menu.classList.remove("show");
+    menu.classList.add("hide");
+  }
+});
 
 btn.addEventListener("click", () => {
   menu.classList.toggle("show");

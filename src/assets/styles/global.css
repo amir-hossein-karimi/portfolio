@@ -9,22 +9,21 @@
 }
 
 body {
-  @apply flex flex-col h-screen;
+  @apply flex flex-col h-screen bg-background-main text-gray-400;
 }
 
 main {
   @apply flex-grow overflow-y-auto overflow-x-hidden;
 }
 
-
 ::-webkit-scrollbar {
-  @apply w-1
+  @apply w-1;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-transparent
+  @apply bg-transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-400 rounded-lg
+  @apply bg-slate-400 rounded-lg;
 }

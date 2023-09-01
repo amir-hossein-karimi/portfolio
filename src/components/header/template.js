@@ -13,7 +13,7 @@ export const headerTemplate = `
 
                     <div class="links-container" id='linksContainer'></div>
             
-                    <div class="md:hidden flex items-center">
+                    <div class="sm:hidden flex items-center">
                         <button class="outline-none menu-button">
                         <svg class="burger-menu-svg" x-show="! showMenu" fill="none" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2" viewBox="0 00 24 24" stroke="currentColor">
