@@ -9,6 +9,7 @@ export const trackerActions = {
 
     if (this.increaseTimer) return;
     const tracker = document.getElementById("mouseTracker");
+    if (!tracker) return;
     this.increaseTimer = setInterval(() => {
       const transforms = tracker.style.transform
         .split(" ")
@@ -41,7 +42,7 @@ export const trackerActions = {
 
     if (this.decreaseTimer) return;
     const tracker = document.getElementById("mouseTracker");
-
+    if (!tracker) return;
     this.decreaseTimer = setInterval(() => {
       const transforms = tracker.style.transform
         .split(" ")
