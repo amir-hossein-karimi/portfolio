@@ -8,7 +8,7 @@ export const headerTemplate = `
                     <div class="flex space-x-7">
                         ${linearText({
                           text: "Portfolio",
-                          textClassName: "font-semibold text-lg",
+                          textClassName: "font-semibold text-xl",
                           containerClassName: "py-y px-2",
                         })}
                     </div>

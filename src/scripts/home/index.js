@@ -1,7 +1,9 @@
+import { glitchTextTemplate } from "../../components/glitchText/template";
+
 const root = document.getElementById("root");
 
 root.innerHTML = `
     <div>
-        home
+        ${glitchTextTemplate({ text: "Home" })}
     </div>
 `;
