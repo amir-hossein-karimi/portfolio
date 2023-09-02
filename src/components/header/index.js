@@ -4,11 +4,7 @@ import { headerTemplate } from "./template";
 import { insertElement } from "../../utils/insertElement";
 import { navLinks } from "../../constants";
 import { windowSizeTracker } from "../../utils/windowSizeTracker";
-import {
-  trackerActions,
-  trackerScaleDown,
-  trackerScaleUp,
-} from "../../utils/trackerFunctions";
+import { trackerActions } from "../../utils/trackerFunctions";
 
 // ==== insert header
 const headerNode = document.createElement("header");

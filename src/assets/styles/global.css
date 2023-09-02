@@ -16,6 +16,8 @@
 
 body {
   @apply flex flex-col h-screen bg-background-main text-gray-400;
+  background: url(../images/main-bg.webp) no-repeat 100% 100%;
+  background-size: cover;
 }
 
 main {
