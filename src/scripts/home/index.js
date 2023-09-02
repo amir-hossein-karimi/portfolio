@@ -6,10 +6,11 @@ const root = document.getElementById("root");
 
 root.innerHTML += `
     <div id="home">
-        ${glitchTextTemplate({ text: "Home" })}
-
-        <div id="cardContainer">
-            ${hoverCardTemplate()}
+        <div id="cardContainer" class="pt-10">
+            ${hoverCardTemplate({
+              text: "3d text",
+              imagePath: "../../assets/images/JavaScript-logo.png",
+            })}
         </div>
     </div>
 `;
