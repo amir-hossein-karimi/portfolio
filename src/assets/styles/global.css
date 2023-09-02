@@ -14,10 +14,15 @@
   backface-visibility: hidden;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   @apply flex flex-col h-screen bg-background-main text-gray-400;
   background: url(../images/main-bg.webp) no-repeat 100% 100%;
   background-size: cover;
+  /* perspective: 1000px; */
 }
 
 main {
@@ -67,4 +72,8 @@ main {
   border-radius: 50%;
   background-color: white;
   pointer-events: none;
+}
+
+#cardContainer {
+  perspective: 1500px;
 }

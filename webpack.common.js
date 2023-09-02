@@ -5,6 +5,22 @@ const { validRoutes } = require("./src/constants/routes.js");
 
 let entries = {};
 
+console.log(
+  ...validRoutes.map(
+    ({ route, hasHeader = false, hasFooter = false }) =>
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, `src/templates/${route}.html`),
+        chunks: [
+          "main",
+          ...(hasHeader ? ["header"] : []),
+          route,
+          ...(hasFooter ? ["footer"] : []),
+        ],
+        filename: `${route}/index.html`,
+      })
+  )
+);
+
 validRoutes.forEach(({ route }) => {
   entries = {
     ...entries,
