@@ -4,6 +4,11 @@ import { headerTemplate } from "./template";
 import { insertElement } from "../../utils/insertElement";
 import { navLinks } from "../../constants";
 import { windowSizeTracker } from "../../utils/windowSizeTracker";
+import {
+  trackerActions,
+  trackerScaleDown,
+  trackerScaleUp,
+} from "../../utils/trackerFunctions";
 
 // ==== insert header
 const headerNode = document.createElement("header");
@@ -13,15 +18,19 @@ insertElement(document.getElementById("root"), headerNode, "before");
 // ==== links
 const linksContainer = document.getElementById("linksContainer");
 navLinks.forEach((navLink) => {
-  const linkEl = `
-    <a href="${navLink.route}" class="nav-link ${
+  const linkEl = document.createElement("a");
+  linkEl.setAttribute("href", navLink.route);
+  linkEl.classList.add(
+    "nav-link",
     window.location.pathname === navLink.route ? "active" : "notActive"
-  }">
-      ${navLink.label}
-    </a>
-  `;
+  );
+  linkEl.innerText = navLink.label;
 
-  linksContainer.innerHTML += linkEl;
+  linkEl.addEventListener("mouseenter", trackerActions.increaseScale);
+
+  linkEl.addEventListener("mouseleave", trackerActions.decreaseScale);
+
+  linksContainer.appendChild(linkEl);
 });
 
 const mobileLinksContainer = document.getElementById("mobileLinksContainer");

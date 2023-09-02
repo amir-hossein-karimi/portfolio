@@ -1,3 +1,3 @@
 const root = document.getElementById("root");
 
-root.innerText = "about";
+root.innerText += "about";

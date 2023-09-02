@@ -10,6 +10,8 @@
   box-sizing: border-box;
   font-family: "PT Sans", sans-serif;
   font-family: "Quicksand", sans-serif;
+  cursor: none;
+  backface-visibility: hidden;
 }
 
 body {
@@ -41,4 +43,26 @@ main {
   background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+}
+
+#mouseTracker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 1px solid white;
+  pointer-events: none;
+}
+
+#trackerInner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background-color: white;
+  pointer-events: none;
 }
