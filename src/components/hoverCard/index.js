@@ -23,7 +23,7 @@ export const handleHoverCard = () => {
         ${center.y / 100},
       ${-center.x / 100},
       0,
-      ${Math.log(distance) * 2}deg
+      ${Math.log(distance) * 5}deg
       )
       `;
 
