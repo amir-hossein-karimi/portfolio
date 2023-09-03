@@ -2,7 +2,7 @@ import { linearText } from "../linearText/template";
 
 export const headerTemplate = `
     <nav class="navbar">
-        <div class="px-4">
+        <div class="sm:px-0 px-2">
             <div>
                 <div class="flex justify-between flex-row-reverse h-12">
                     <div class="flex space-x-7">
