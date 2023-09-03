@@ -11,14 +11,14 @@ footerNode.innerHTML = footerTemplate;
 insertElement(document.getElementById("root"), footerNode, "after");
 
 // ==== footer items
-const createPageItem = ({ label, src, alt, size }) => `
-    <a class="flex items-center sm:gap-2 gap-1">
+const createPageItem = ({ link, label, src, alt, size }) => `
+    <a href="${link}" class="flex items-center sm:gap-2 gap-1">
         <img src="${src}" alt="${alt}" width="${size}" height="${size}">
         <p class="text-sm">${label}</p>
     </a>
 `;
-const createLinkItem = ({ href, src, alt, size }) => `
-    <a href="${href}" target="_blank" class="w-8 h-8 bg-gray-700 rounded-[50%] flex justify-center items-center">
+const createLinkItem = ({ link, src, alt, size }) => `
+    <a href="${link}" target="_blank" class="w-8 h-8 bg-gray-700 rounded-[50%] flex justify-center items-center">
         <img src="${src}" alt="${alt}" width="${size}" height="${size}">
     </a>
 `;
