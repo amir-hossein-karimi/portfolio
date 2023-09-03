@@ -1,16 +1,17 @@
+import { sleep } from "./sleep";
+
 export const trackerActions = {
-  increaseTimer: undefined,
-  decreaseTimer: undefined,
-  increaseScale() {
-    if (this.decreaseTimer) {
-      clearInterval(this.decreaseTimer);
-      this.decreaseTimer = undefined;
-    }
+  increaseCall: false,
+  decreaseCall: false,
+  async increaseScale() {
+    this.decreaseCall = false;
+    this.increaseCall = true;
 
     if (this.increaseTimer) return;
     const tracker = document.getElementById("mouseTracker");
     if (!tracker) return;
-    this.increaseTimer = setInterval(() => {
+    while (this.increaseCall) {
+      await sleep(10);
       const transforms = tracker.style.transform
         .split(" ")
         .map((item) => {
@@ -19,8 +20,7 @@ export const trackerActions = {
               +item.substring(item.indexOf("(") + 1, item.lastIndexOf(")")) >=
               2.9
             ) {
-              clearInterval(this.increaseTimer);
-              this.increaseTimer = undefined;
+              this.increaseCall = false;
             }
             return `scale(${
               +item.substring(item.indexOf("(") + 1, item.lastIndexOf(")")) +
@@ -32,18 +32,17 @@ export const trackerActions = {
         .join(" ");
 
       tracker.style.transform = transforms;
-    }, 10);
-  },
-  decreaseScale() {
-    if (this.increaseTimer) {
-      clearInterval(this.increaseTimer);
-      this.increaseTimer = undefined;
     }
+  },
+  async decreaseScale() {
+    this.increaseCall = false;
+    this.decreaseCall = true;
 
     if (this.decreaseTimer) return;
     const tracker = document.getElementById("mouseTracker");
     if (!tracker) return;
-    this.decreaseTimer = setInterval(() => {
+    while (this.decreaseCall) {
+      await sleep(10);
       const transforms = tracker.style.transform
         .split(" ")
         .map((item) => {
@@ -52,8 +51,7 @@ export const trackerActions = {
               +item.substring(item.indexOf("(") + 1, item.lastIndexOf(")")) <=
               1.1
             ) {
-              clearInterval(this.decreaseTimer);
-              this.decreaseTimer = undefined;
+              this.decreaseCall = false;
             }
             return `scale(${
               +item.substring(item.indexOf("(") + 1, item.lastIndexOf(")")) -
@@ -65,6 +63,6 @@ export const trackerActions = {
         .join(" ");
 
       tracker.style.transform = transforms;
-    }, 10);
+    }
   },
 };
