@@ -1,4 +1,5 @@
 import "../../assets/styles/global.css";
+import { trackerActions } from "../../utils/trackerFunctions";
 
 (function () {
   const mainTag = document.createElement("main");
@@ -34,6 +35,10 @@ import "../../assets/styles/global.css";
         tracker.style.transform = "translate(-50%, -50%) scale(1)";
       if (!trackerInner.style.transform.includes("translate(-50%, -50%)"))
         trackerInner.style.transform = "translate(-50%, -50%) scale(1)";
+
+      document.onclick = () => {
+        trackerActions.increaseScale(true);
+      };
 
       trackerInner.style.top = `${event.pageY}px`;
       trackerInner.style.left = `${event.pageX}px`;

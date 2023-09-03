@@ -3,7 +3,7 @@ import { sleep } from "./sleep";
 export const trackerActions = {
   increaseCall: false,
   decreaseCall: false,
-  async increaseScale() {
+  async increaseScale(decreaseAfter = false) {
     this.decreaseCall = false;
     this.increaseCall = true;
 
@@ -33,6 +33,8 @@ export const trackerActions = {
 
       tracker.style.transform = transforms;
     }
+
+    if (decreaseAfter) this.decreaseScale?.();
   },
   async decreaseScale() {
     this.increaseCall = false;
