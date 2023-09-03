@@ -7,3 +7,5 @@ import { footerTemplate } from "./template";
 const footerNode = document.createElement("footer");
 footerNode.innerHTML = footerTemplate;
 insertElement(document.getElementById("root"), footerNode, "after");
+
+// ==== footer items

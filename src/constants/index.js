@@ -8,3 +8,18 @@ export const navLinks = [
     route: "/about",
   },
 ];
+
+export const footerItems = {
+  pages: [
+    {
+      link: "",
+      label: "",
+    },
+  ],
+  links: [
+    {
+      link: "",
+      iconPath: "",
+    },
+  ],
+};
