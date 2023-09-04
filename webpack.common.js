@@ -25,7 +25,6 @@ module.exports = {
     assetModuleFilename: (p) => {
       return p.filename.split("src/")[1];
     },
-    publicPath: "/",
   },
   module: {
     rules: [
