@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const { validRoutes } = require("./src/constants/routes.js");
+const NotFound = require("./src/Plugins/NotFound.js");
 
 let entries = {};
 
@@ -25,6 +26,7 @@ module.exports = {
     assetModuleFilename: (p) => {
       return p.filename.split("src/")[1];
     },
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -70,9 +72,13 @@ module.exports = {
             route,
             ...(hasFooter ? ["footer"] : []),
           ],
-          filename: `${route}/index.html`,
+          filename: `pages/${route}/index.html`,
         })
     ),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, `src/templates/404.html`),
+      chunks: [],
+    }),
     new CopyPlugin({
       patterns: [
         {

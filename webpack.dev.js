@@ -11,7 +11,9 @@ const devWebpackConfig = {
     static: "./build",
     port: 3000,
     open: true,
-    historyApiFallback: true,
+    historyApiFallback: {
+      index: "/",
+    },
   },
   module: {
     rules: [
