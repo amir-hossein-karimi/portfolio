@@ -1,18 +1,18 @@
 export const navLinks = [
   {
     label: "Home",
-    route: "/home",
+    route: "/pages/home",
   },
   {
     label: "About",
-    route: "/about",
+    route: "/pages/about",
   },
 ];
 
 export const footerItems = {
   pages: [
     {
-      link: "/home",
+      link: "/pages/home",
       label: "Home",
       logo: {
         src: "../../assets/images/home.svg",
@@ -21,7 +21,7 @@ export const footerItems = {
       },
     },
     {
-      link: "/about",
+      link: "/pages/about",
       label: "About me",
       logo: {
         src: "../../assets/images/user.svg",
@@ -30,7 +30,7 @@ export const footerItems = {
       },
     },
     {
-      link: "/contact",
+      link: "/pages/contact",
       label: "Contact",
       logo: {
         src: "../../assets/images/phone.svg",

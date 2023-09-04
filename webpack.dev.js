@@ -12,7 +12,7 @@ const devWebpackConfig = {
     port: 3000,
     open: true,
     historyApiFallback: {
-      index: "/",
+      index: "/pages/404.html",
     },
   },
   module: {

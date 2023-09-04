@@ -2,7 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const { validRoutes } = require("./src/constants/routes.js");
-const NotFound = require("./src/Plugins/NotFound.js");
 
 let entries = {};
 
@@ -78,6 +77,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, `src/templates/404.html`),
       chunks: [],
+      filename: "/pages/404.html",
     }),
     new CopyPlugin({
       patterns: [
