@@ -36,10 +36,6 @@ import { trackerActions } from "../../utils/trackerFunctions";
       if (!trackerInner.style.transform.includes("translate(-50%, -50%)"))
         trackerInner.style.transform = "translate(-50%, -50%) scale(1)";
 
-      document.onclick = () => {
-        trackerActions.increaseScale(true);
-      };
-
       trackerInner.style.top = `${event.pageY}px`;
       trackerInner.style.left = `${event.pageX}px`;
 

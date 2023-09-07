@@ -40,12 +40,10 @@ export const handleHoverCard = () => {
 
     $card.addEventListener("mouseenter", () => {
       bounds = $card.getBoundingClientRect();
-      trackerActions.increaseScale();
       document.addEventListener("mousemove", rotateToMouse);
     });
 
     $card.addEventListener("mouseleave", () => {
-      trackerActions.decreaseScale();
       document.removeEventListener("mousemove", rotateToMouse);
       $card.style.transform = "";
       $card.style.background = "";
