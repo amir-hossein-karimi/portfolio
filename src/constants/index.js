@@ -64,5 +64,13 @@ export const footerItems = {
         size: "16",
       },
     },
+    {
+      link: "https://www.npmjs.com/~amir-hossein-karimi",
+      logo: {
+        src: "../../assets/images/npmLogo.png",
+        alt: "npm",
+        size: "24",
+      },
+    },
   ],
 };
