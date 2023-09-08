@@ -1,11 +1,17 @@
+.start-container {
+  height: calc(100vh - 20rem); 
+}
+
 .start {
   @apply relative;
 }
 
+
 .start-bullet {
-  @apply w-2 h-2 border-secondary-dark border-2 absolute top-2 left-[-1.3rem] rounded-full;
+    @apply w-2 h-2 border-secondary-dark border-2 absolute top-2 left-[-1.3rem] rounded-full;
 }
 
-.start-container {
-  height: calc(100vh - 20rem);
+
+.heading {
+    @apply font-bold text-xl sm:text-2xl md:text-3xl
 }
