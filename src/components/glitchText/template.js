@@ -1,5 +1,5 @@
 import "./style.css";
 
 export const glitchTextTemplate = ({ text = "", textClassName = "" }) => `
-    <p class="glitch ${textClassName}" data-text="${text}">${text}</p>
+    <span class="glitch ${textClassName} whitespace-nowrap" data-text="${text}">${text}</span>
 `;

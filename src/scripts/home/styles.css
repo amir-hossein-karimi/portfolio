@@ -1,10 +1,9 @@
 .home {
-  @apply pt-40 h-full flex gap-4 px-4;
+  @apply pt-40 h-auto flex gap-4 px-4;
 }
 
 .time-line {
   @apply w-[2px] bg-secondary-dark mt-4;
-  height: calc(100% - 1rem);
 }
 
 .start {
@@ -13,4 +12,8 @@
 
 .start-bullet {
   @apply w-2 h-2 border-secondary-dark border-2 absolute top-2 left-[-1.3rem] rounded-full;
+}
+
+.start-container {
+  height: calc(100vh - 20rem);
 }

@@ -11,11 +11,11 @@
 }
 
 .nav-link.active {
-  @apply text-secondary-light;
+  @apply text-secondary-main;
 }
 
 .nav-link.notActive {
-  @apply hover:text-secondary-light;
+  @apply hover:text-secondary-main;
 }
 
 .mobile-nav-link {
@@ -47,5 +47,5 @@
 }
 
 .indicator {
-  @apply absolute top-1/2 left-4 w-2 h-2 rounded-[50%] bg-secondary-light translate-y-[-50%];
+  @apply absolute top-1/2 left-4 w-2 h-2 rounded-[50%] bg-secondary-main translate-y-[-50%];
 }
