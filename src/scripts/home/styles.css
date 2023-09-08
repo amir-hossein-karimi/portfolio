@@ -5,15 +5,3 @@
 .time-line {
   @apply w-[2px] bg-secondary-dark mt-4;
 }
-
-.start {
-  @apply relative;
-}
-
-.start-bullet {
-  @apply w-2 h-2 border-secondary-dark border-2 absolute top-2 left-[-1.3rem] rounded-full;
-}
-
-.start-container {
-  height: calc(100vh - 20rem);
-}
