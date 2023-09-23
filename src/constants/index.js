@@ -1,12 +1,14 @@
+const { validRoutes } = require("./routes");
+
+function capitalizeFirstLetter(str) {
+  return str[0].toUpperCase() + str.slice(1);
+}
+
 export const navLinks = [
-  {
-    label: "Home",
-    route: "/pages/home",
-  },
-  {
-    label: "About",
-    route: "/pages/about",
-  },
+  ...validRoutes.map((item) => ({
+    label: capitalizeFirstLetter(item.route),
+    route: `/pages/${item.route}`,
+  })),
 ];
 
 export const footerItems = {
