@@ -1,6 +1,3 @@
-import { trackerActions } from "../../utils/trackerFunctions";
-import "./style.css";
-
 export const handleHoverCard = () => {
   setTimeout(() => {
     const $card = document.querySelector(".card");

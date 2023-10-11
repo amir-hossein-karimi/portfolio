@@ -1,3 +1,8 @@
+import { handleHoverCard } from ".";
+import "./style.css";
+
+handleHoverCard();
+
 export const hoverCardTemplate = ({
   text = "",
   className = "",
