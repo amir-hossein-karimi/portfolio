@@ -1,14 +1,12 @@
+import { projects } from "../../../constants/projects";
 import { hoverCardTemplate } from "../../hoverCard/template";
 
-const projectsTemplate = `
+const projectsTemplate = () => {
+  return `
     <div>
-        ${hoverCardTemplate({
-          text: "this is test",
-          imagePath: "../../../assets/images/JavaScript-logo.png",
-          count: "01",
-        })}
+        ${projects.map((project) => `${hoverCardTemplate(project)}`).join("")}
     </div>
-    
 `;
+};
 
-export default projectsTemplate;
+export default projectsTemplate();

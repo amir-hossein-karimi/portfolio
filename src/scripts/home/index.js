@@ -5,7 +5,7 @@ import projectsTemplate from "../../components/Home/Projects/template";
 const root = document.getElementById("root");
 
 root.innerHTML += `
-    <div class="home">
+    <div class="home" id="home">
        <div class="time-line"></div>
 
        <div class="grow">

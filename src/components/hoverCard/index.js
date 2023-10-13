@@ -1,7 +1,13 @@
-export const handleHoverCard = () => {
+import isEven from "../../utils/isEvent";
+
+export const handleHoverCard = (count) => {
+  const id = `card-${count}`;
+
   setTimeout(() => {
-    const $card = document.querySelector(".card");
+    const $card = document.getElementById(id);
     let bounds;
+
+    $card.style[isEven(count) ? "marginLeft" : "marginRight"] = "1rem";
 
     function rotateToMouse(e) {
       const mouseX = e.clientX;

@@ -8,9 +8,10 @@
   height: 400px;
   box-shadow: 0 1px 5px #00000099;
 
+  margin-bottom: 2rem !important;
+
   border-radius: 10px;
-  /* background-image: url("../../assets/images/JavaScript-logo.png");
-  background-size: cover; */
+  background-size: cover;
   background-color: gray;
 
   margin: 0 auto;
