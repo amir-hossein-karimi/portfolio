@@ -1,0 +1,7 @@
+.projects-title {
+  @apply relative mb-6;
+}
+
+.projects-bullet {
+  @apply w-2 h-2 bg-black border-secondary-dark border-2 absolute top-2 left-[-1.3rem] rounded-full;
+}
