@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { merge } = require("webpack-merge");
 const commonWebpackConfig = require("./webpack.common");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const prodWebpackConfig = {
   mode: "production",
@@ -35,7 +36,7 @@ const prodWebpackConfig = {
             loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: "css-loader",
+            loader: MiniCssExtractPlugin.loader,
             options: {
               modules: true,
             },
@@ -60,6 +61,8 @@ const prodWebpackConfig = {
     splitChunks: {
       chunks: "all",
     },
+    minimizer: [new CssMinimizerPlugin()],
+    minimize: true,
   },
 };
 

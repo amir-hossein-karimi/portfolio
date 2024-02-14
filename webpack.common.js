@@ -76,7 +76,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, `src/templates/404.html`),
       chunks: [],
-      filename: "/pages/404.html",
+      filename: "pages/404.html",
     }),
     new CopyPlugin({
       patterns: [
